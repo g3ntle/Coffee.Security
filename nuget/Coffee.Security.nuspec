@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Coffee.Security</id>
+    <version>1.0.0</version>
+    <authors>g3ntle</authors>
+    <licenseUrl>https://github.com/g3ntle/Coffee.Security/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/g3ntle/Coffee.Security</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/g3ntle/Coffee.Security/master/docs/logo-64x64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Security simplified.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Security</tags>
+  </metadata>
+  <files>
+    <file src="..\src\Coffee.Security\bin\Release\Coffee.Security.dll" target="lib\Coffee.Security.dll"/>
+  </files>
+</package>
