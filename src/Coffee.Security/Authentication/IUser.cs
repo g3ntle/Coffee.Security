@@ -7,6 +7,7 @@ namespace Coffee.Security.Authentication
         #region Properties
 
         ICredentials Credentials { get; set; }
+        INodeRepository Nodes { get; set; }
 
         #endregion
 
@@ -23,6 +24,7 @@ namespace Coffee.Security.Authentication
 
         void SignIn();
         void SignOut();
+        bool HasNode(string node);
 
         #endregion
     }

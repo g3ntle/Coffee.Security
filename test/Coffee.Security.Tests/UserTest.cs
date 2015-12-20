@@ -38,5 +38,24 @@ namespace Coffee.Security.Tests
 
             Assert.AreEqual(two, User.Current, "User two should be signed in");
         }
+
+        [TestMethod]
+        public void ShouldntHaveNode()
+        {
+            var user = new DummyUser();
+            user.SignIn();
+
+            Assert.IsFalse(User.HasNode("Test"), "User should not have node Test");
+        }
+
+        [TestMethod]
+        public void ShouldHaveNode()
+        {
+            var user = new DummyUser();
+            user.Nodes = new DummyNodeRepository();
+            user.SignIn();
+
+            Assert.IsTrue(User.HasNode("Test"), "User should have node Test");
+        }
     }
 }

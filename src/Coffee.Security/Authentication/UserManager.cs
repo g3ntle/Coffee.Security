@@ -1,4 +1,5 @@
 ﻿using Coffee.Security.Authentication.Helpers;
+using Coffee.Security.Authentication.Spoofing;
 using System;
 
 namespace Coffee.Security.Authentication
@@ -9,6 +10,7 @@ namespace Coffee.Security.Authentication
 
         private static UserManager _instance;
 
+        private readonly Spoofer spoofer;
         private IUser _current;
 
         #endregion
@@ -18,7 +20,7 @@ namespace Coffee.Security.Authentication
 
         private UserManager()
         {
-            // TODO
+            spoofer = new Spoofer(this);
         }
 
         #endregion
@@ -72,6 +74,11 @@ namespace Coffee.Security.Authentication
 
         #region
 
+        public void Spoof()
+        {
+            spoofer.Spoof();
+        }
+
         public void SignIn(IUser user)
         {
             if (user == null)
@@ -94,6 +101,11 @@ namespace Coffee.Security.Authentication
                 throw new SecurityException(Reason.UserNotSignedIn);
 
             Current = null;
+        }
+        
+        public bool HasNode(string node)
+        {
+            return Current?.HasNode(node) ?? false;
         }
 
         private void OnSignedIn(IUser user)

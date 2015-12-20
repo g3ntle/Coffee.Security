@@ -19,6 +19,11 @@ namespace Coffee.Security.Authentication
 
         #region Methods
 
+        public static void Spoof()
+        {
+            UserManager.Instance.Spoof();
+        }
+
         public static void SignIn(IUser user)
         {
             UserManager.Instance.SignIn(user);
@@ -27,6 +32,11 @@ namespace Coffee.Security.Authentication
         public static void SignOut(IUser user)
         {
             UserManager.Instance.SignOut(user);
+        }
+
+        public static bool HasNode(string node)
+        {
+            return UserManager.Instance.HasNode(node);
         }
 
         #endregion

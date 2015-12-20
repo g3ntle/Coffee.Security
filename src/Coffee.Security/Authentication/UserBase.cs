@@ -11,6 +11,7 @@ namespace Coffee.Security.Authentication
         #region Properties
 
         public virtual ICredentials Credentials { get; set; }
+        public virtual INodeRepository Nodes { get; set; }
 
         #endregion
 
@@ -49,6 +50,11 @@ namespace Coffee.Security.Authentication
             {
                 throw new SignOutException(ex);
             }
+        }
+
+        public bool HasNode(string node)
+        {
+            return Nodes?.Contains(node) ?? false;
         }
 
         protected void OnSignedIn()

@@ -14,11 +14,13 @@ namespace Coffee.Security.Authentication.Dummy
 
         #region Constructors
 
-        public DummyUser(string name = "Dummy")
+        public DummyUser(string name)
         {
             _credentials = new DummyCredentials();
             _name = name;
         }
+
+        public DummyUser() : this("Dummy") { }
 
         #endregion
 
