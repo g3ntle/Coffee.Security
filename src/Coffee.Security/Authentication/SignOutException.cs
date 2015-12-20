@@ -7,7 +7,7 @@ namespace Coffee.Security.Authentication
         #region Constructors
 
         public SignOutException(SecurityException inner) 
-            : base(inner?.ErrorCode ?? -1, Resources.Strings.SignOutFailed, inner) { }
+            : base(inner?.ErrorCode ?? -1, "Unable to sign out", inner) { }
 
         #endregion
     }

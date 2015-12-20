@@ -4,6 +4,19 @@ namespace Coffee.Security.Authentication
 {
     public static class User
     {
+        #region Properties
+
+        public static IUser Current
+        {
+            get
+            {
+                return UserManager.Instance.Current;
+            }
+        }
+
+        #endregion
+
+
         #region Methods
 
         public static void SignIn(IUser user)

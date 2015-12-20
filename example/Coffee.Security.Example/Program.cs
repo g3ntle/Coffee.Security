@@ -1,6 +1,8 @@
 ﻿using Coffee.Security.Authentication;
 using Coffee.Security.Authentication.Dummy;
 using System;
+using System.Globalization;
+using System.Threading;
 
 namespace Coffee.Security.Example
 {
@@ -18,14 +20,24 @@ namespace Coffee.Security.Example
             IUser john = new DummyUser("John"),
                   jane = new DummyUser("Jane");
 
-            john.SignIn();
-            jane.SignIn();
+            john.SignIn(); // Sign in as John
+            jane.SignIn(); // Sign in as Jane (replacing John)
+            jane.SignOut(); // Sign out
         }
 
         public static void Main(string[] args)
         {
             Console.Title = "Example";
-            new Program().Run();
+            
+            try
+            {
+                new Program().Run();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message + ": " + ex.InnerException?.Message);
+            }
+
             Console.Read();
         }
 

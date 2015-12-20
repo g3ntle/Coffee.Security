@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Resources;
 
 namespace Coffee.Security.Authentication.Helpers
 {
@@ -19,12 +20,12 @@ namespace Coffee.Security.Authentication.Helpers
 
         private static readonly Dictionary<Reason, string> Messages = new Dictionary<Reason, string>()
         {
-            { Reason.UserNull, Resources.Strings.UserNull },
-            { Reason.CredentialsNull, Resources.Strings.CredentialsNull },
-            { Reason.UserInvalid, Resources.Strings.UserInvalid },
-            { Reason.CredentialsInvalid, Resources.Strings.CredentialsInvalid },
-            { Reason.UserSignedIn, Resources.Strings.UserSignedIn },
-            { Reason.UserNotSignedIn, Resources.Strings.UserNotSignedIn }
+            { Reason.UserNull, "User cannot be null" },
+            { Reason.CredentialsNull, "Credentials cannot be null" },
+            { Reason.UserInvalid, "Invalid user" },
+            { Reason.CredentialsInvalid, "Invalid credentials" },
+            { Reason.UserSignedIn, "User already signed in" },
+            { Reason.UserNotSignedIn, "User not signed in" }
         };
 
         #endregion
