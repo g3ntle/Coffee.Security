@@ -1,6 +1,6 @@
 # Coffee.Security
 
-**Authentication simplified**
+**Security simplified**
 
 ![Logo][logo]
 
